@@ -2,8 +2,18 @@
 <html lang="en" data-theme="light">
 <head>
     <title>matt and friends</title>
-    <!-- Pico.css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+    <!-- You should properly set the path from the main file. -->
+
     <!-- HTMX -->
     <script src="https://unpkg.com/htmx.org@1.5.0"></script>
 </head>
@@ -13,7 +23,11 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: 100vh
+        min-height: calc(100vh - 7rem);
+    }
+
+    html {
+        font-size: 80%;
     }
 </style>
 
@@ -21,6 +35,9 @@
     <main class="container">
         {% block content %}{% endblock %}
     </main>
+    <footer class="container">
+        <a><small>Already filled this out? Click here to see everyone's responses or edit your own.</small></a>
+    </footer>
 </body>
 
 </html>
