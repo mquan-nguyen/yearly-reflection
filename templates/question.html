@@ -1,0 +1,23 @@
+{% block content %}
+<!-- htmx here -->
+<form hx-post="/next-question" hx-swap="innerHTML">
+{% if num == 0 %}
+    <label for="name">What's your name?</label>
+    <input type="text" name="name" id="1" placeholder="Your stuff here" autofocus/>
+{% elif num == 1 %}
+    <label for="year">What were your 3 favorite memories of the year?</label>
+    <input type="text" name="memory" id="memory-1" placeholder="Your stuff here" autofocus/>
+    <input type="text" name="memory" id="memory-2" placeholder="Your stuff here"/>
+    <input type="text" name="memory" id="memory-3" placeholder="Your stuff here"/>
+    <input type="submit" class="button button-clear"/>
+{% elif num == 2 %}
+    <label for="year">What year is it?</label>
+    <input type="text" name="year" id="2" placeholder="Your stuff here" autofocus/>
+{% endif %}
+{% if username %}
+    <input type="hidden" id="username" name="username" value="{{username}}"/>
+{% endif %}
+    <input type="hidden" id="question-num" name="question-num" value="{{num}}"/>
+</form>
+
+{% endblock %}
