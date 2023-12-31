@@ -40,7 +40,7 @@ def save_to_file(data_multidict):
     filename = slugify(data_multidict["name"]) + ".json"
     print(f"Writing to file '{filename}'")
 
-    with open(filename, 'w', encoding="utf-8") as f:
+    with open(f"data/{filename}", 'w', encoding="utf-8") as f:
         json.dump(data_multidict, f, ensure_ascii=False)
 
 if __name__ == "__main__":
