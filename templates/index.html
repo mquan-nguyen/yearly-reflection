@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- htmx here -->
+<form hx-post="/next-question" hx-swap="outerHTML">
+    <label for="name">What's your name?</label>
+    <input type="text" name="name" id="name" value=""/>
+</form>
+
+{% endblock %}
