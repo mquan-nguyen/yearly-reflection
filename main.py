@@ -45,6 +45,15 @@ def view_all_names():
     print(people)
     return render_template("everyone.html", people=people.values())
 
+@app.route("/<string:username>")
+def profile(username: str):
+    people = get_all_data()
+
+    if username not in people:
+        return render_template("404.html", code=404)
+    
+    return render_template("person.html", person=people[username])
+
 def get_all_data() -> dict[str, dict[str, str]]:
     json_files = get_all_data_filenames()
     people = dict() # username -> person
