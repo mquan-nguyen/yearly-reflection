@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 from slugify import slugify
-from werkzeug.datastructures import CombinedMultiDict
 import json
+import glob
 
 
 app = Flask(__name__)
@@ -32,9 +32,34 @@ def next_question():
 
     if question_num >= MAX_QUESTIONS-1:
         save_to_file(data_memory[username])
-        return "<p> all done! </p>"
+        return render_template("ending.html")
 
     return render_template("question.html", num=min(question_num+1, MAX_QUESTIONS), username=username)
+
+@app.route("/everyone")
+def view_all_names():
+    # it's probably a better pattern to only access the names
+    # but i have a feeling that I might use more data in the future
+    people = get_all_data()
+
+    print(people)
+    return render_template("everyone.html", people=people.values())
+
+def get_all_data() -> dict[str, dict[str, str]]:
+    json_files = get_all_data_filenames()
+    people = dict() # username -> person
+    for filename in json_files:
+        with open(filename, 'r') as f:
+            person = json.load(f) 
+        people[person["username"]] = person
+
+    return people
+
+def get_all_data_filenames() -> list[str]:
+    directory_path = "data/"
+    json_files = glob.glob(f"{directory_path}/*.json")
+    print(json_files)
+    return json_files
 
 def save_to_file(data_multidict):
     filename = slugify(data_multidict["name"]) + ".json"
