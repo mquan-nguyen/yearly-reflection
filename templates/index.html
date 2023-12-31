@@ -4,8 +4,14 @@
 
 <!-- htmx here -->
 <form hx-post="/next-question" hx-swap="outerHTML">
+{% if num == 1 %}
     <label for="name">What's your name?</label>
-    <input type="text" name="name" id="name" value=""/>
+    <input type="text" name="name" id="1"/>
+{% elif num == 2 %}
+    <label for="name">What year is it?</label>
+    <input type="text" name="year" id="2"/>
+{% endif %}
+    <input type="hidden" id="question-num" name="question-num" value="{{num}}"/>
 </form>
 
 {% endblock %}
