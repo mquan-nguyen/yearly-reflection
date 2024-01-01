@@ -5,7 +5,7 @@ import glob
 
 
 app = Flask(__name__)
-MAX_QUESTIONS = 7 #non-inclusive since questions start at 0
+MAX_QUESTIONS = 9 #non-inclusive since questions start at 0
 data_memory = dict()
 
 @app.route("/")
