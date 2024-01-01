@@ -3,22 +3,26 @@
 <head>
     <title>matt and friends</title>
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-
-    <!-- CSS Reset -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-
-    <!-- Milligram CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-
-    <!-- You should properly set the path from the main file. -->
+    <!--bulma CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <!-- HTMX -->
     <script src="https://unpkg.com/htmx.org@1.5.0"></script>
 </head>
 
 <style>
+
+    html {
+        font-size: 20px;
+    }
+
+    @media screen and (min-width: 769px) and (max-width:1023px) {
+        html {
+            font-size: 40px;
+        }
+    }
+
+
     body > main {
         display: flex;
         flex-direction: column;
@@ -26,20 +30,6 @@
         min-height: calc(100vh - 7rem);
     }
 
-    html {
-        font-size: 80%;
-    }
-
-    div > a {
-        padding: 0 3rem;
-        line-height: 3.8rem;
-        text-align: center;
-        white-space: nowrap;
-    }
-
-    hr {
-        border-top-color: black;
-    }
 </style>
 
 <body>

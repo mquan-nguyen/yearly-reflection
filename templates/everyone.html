@@ -4,7 +4,7 @@
 
 <div>
 {% for person in people %}
-    <a href="/{{ person['username'] }}">{{ person['name'] }}</a>
+    <a href="/{{ person['username'] }}" class="button is-ghost">{{ person['name'] }}</a>
 {% endfor %}
 </div>
 

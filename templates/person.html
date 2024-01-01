@@ -2,18 +2,19 @@
 
 {% block content %}
 
-<h1>{{ person["name"] }}</h1>
+<div class="mx-4">
 
-<div class="row">
+<h1 class="is-size-1">{{ person["name"] }}</h1>
+<div class="columns is-desktop content">
     <div class="column">
-        <h2>2023</h2>
-        <section>
-            <h3>How would you describe 2023?</h3>
+        <h2 class="is-size-2">2023</h2>
+        <section class="block">
+            <h3 class="is-size-4 has-text-weight-medium">How would you describe 2023?</h3>
             <p>{{ person["description-2023"] }}</p>
         </section>
 
-        <section>
-            <h3>Favorite memories</h3>
+        <section class="block">
+            <h3 class="is-size-4 has-text-weight-medium">Favorite memories</h3>
             <ul>
             {% for memory in person["memory"] %}
                 <li>{{ memory }}</li>
@@ -21,32 +22,32 @@
             </ul>
         </section>
 
-        <section>
-            <h3>What made you happy?</h3>
+        <section class="block">
+            <h3 class="is-size-4 has-text-weight-medium">What made you happy?</h3>
             <p>{{ person["happiness"] }}</p>
         </section>
     </div>
 
     <div class="column">
-        <h2>2024</h2>
-        <section>
-            <h3>✨Manifest something✨</h3>
+        <h2 class="is-size-2">2024</h2>
+        <section class="block">
+            <h3 class="is-size-4 has-text-weight-medium">✨Manifest something✨</h3>
             <p>{{ person["manifest"] }}</p>
         </section>
 
-        <section>
-            <h3>I'm looking forward to</h3>
+        <section class="block">
+            <h3 class="is-size-4 has-text-weight-medium">I'm looking forward to</h3>
             <p>{{ person["looking-forward"] }}</p>
         </section>
 
-        <section>
-            <h3>a 2024 goal</h3>
+        <section class="block">
+            <h3 class="is-size-4 has-text-weight-medium">a 2024 goal</h3>
             <p>{{ person["2024-goal"] }}</p>
         </section>
 
         {% if person["comment"]|length > 0 %}
-        <section>
-            <h3>Last thoughts</h3>
+        <section class="block">
+            <h3 class="is-size-4 has-text-weight-medium">Last thoughts</h3>
             <p>{{ person["comment"] }}</p>
         </section>
         {% endif %}
@@ -54,6 +55,7 @@
 
 </div>
 
+</div>
 
 
 {% endblock %}
