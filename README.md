@@ -1,5 +1,7 @@
 # Yearly Reflection
 
+![Screenshot](screenshot.PNG)
+
 I made this project on a whim on the last day of the year in 2023, thinking it would be a good way for people to display it.
 
 I didn't flesh this out fully since I wanted to move onto other things.
